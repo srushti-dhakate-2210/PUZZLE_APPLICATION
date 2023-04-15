@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+  {% block mainrep %}
+    
+
+
+ 
+<br>
+
+  <!-- Game -->
+<section id="signup">
+ <div class="container">
+      <h2 class="text-center text-uppercase text-secondary mb-0">{{qstn_no}}</h2>
+      <hr class="star-dark mb-5">
+      {% if msg != "bla" %}
+
+   <p id="error" class="text-danger" style="font-size:1.5rem;">{{msg}}</p>
+        
+      {% endif %}
+      
+      <hr>
+      <div class="row">
+
+ 		<div class="col-md-4 mb-5 mb-lg-0">
+ 			<!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+ 			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+ 			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+ 			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+ 			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+ 			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
+
+      <img src="/assets/puzzle/{{qstn_no}}a.jpeg" class="img-fluid img-thumbnail">
+  
+        </div>
+        <div class="col-md-4 mb-5 mb-lg-0">
+        <!-- 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
+           <img src="/assets/puzzle/{{qstn_no}}b.jpeg" class="img-fluid img-thumbnail">
+        </div>
+        <div class="col-md-4">
+        <!--  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
+          <img src="/assets/puzzle/{{qstn_no}}c.jpeg" class="img-fluid img-thumbnail">
+        </div>
+
+     
+
+    </div>       
+          
+<br>
+<div id="bottom-ele">
+     <form method="POST" action="{% url 'auth' qstn_no %}">
+      {% csrf_token %}
+
+        <div class="form-group">
+          <!--
+          <label for="exampleInputPassword1">Answers</label>
+         -->
+          {{ form.ans}}
+        </div>
+
+        <input type="submit" value="Submit" class="btn btn-secondary btn-sm">
+
+        </form> 
+
+</div>
+
+
+
+    </div>
+  </section>
+<script type="text/javascript">
+  
+  window.onload =function () {
+
+var inp=$('#id_ans');
+inp.addClass('form-control');
+inp.attr("placeholder",'Answers');
+
+$(error).fadeOut(8000);
+// $(error).hide(10000);
+ 
+  };
+
+
+
+</script>
+
+
+
+
+
+
+  {% endblock %}

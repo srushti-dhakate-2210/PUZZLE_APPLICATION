@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+
+
+
+{% block mainrep %}
+
+
+ 
+<br>
+
+  <!-- winner -->
+<section id="winner">
+    <div class="container">
+      <h2 class="text-center text-uppercase text-secondary mb-0">Winner</h2>
+      <hr class="star-dark mb-5">
+      
+
+      	<div class="alert alert-success" role="alert">
+  <h4 class="alert-heading">Well done!</h4>
+  <p>Thank you {{u}}, for successfully finishing the game.</p>
+  <hr>
+  <p class="mb-0">The results will be published shortly.</p>
+</div>
+
+
+      	</div>
+  </section>
+
+ {% endblock %}

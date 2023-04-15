@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+
+
+
+{% block mainrep %}
+
+
+ 
+<br>
+
+  <!-- Signup -->
+<section id="signup">
+    <div class="container">
+      <h2 class="text-center text-uppercase text-secondary mb-0">Signup</h2>
+      <hr class="star-dark mb-5">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+          <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+           <form  id="contactForm"  method="post">
+
+             {% csrf_token %}
+
+             
+{{form.as_p}}
+<br>
+ <div class="form-group">
+              <input type="submit" class="btn btn-primary btn-xl" value="Signup" id="signupbtn">
+             
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+<script type="text/javascript">
+
+window.onload=function () {
+
+var ul=$('form ul');
+ul.addClass('list-group list-group-flush');
+
+var li=ul.find('li');
+li.addClass('list-group-item list-group-item-light');
+
+//li.addClass('text-secondary');
+
+
+var span=$('form span');
+span.addClass('text-info');
+
+
+var a1=$("#id_username");
+  a1.addClass('form-control');
+  a1.attr('placeholder','Username');
+
+var a2=$("#id_password1");
+  a2.addClass('form-control');
+  a2.attr('placeholder','Password');
+
+  var a3=$("#id_clg");
+  a3.addClass('form-control');
+  a3.attr('placeholder','College');
+
+  var a4=$("#id_password2");
+  a4.addClass('form-control');
+  a4.attr('placeholder','Confirm Password');
+
+  var a5=$("#id_mob");
+  a5.addClass('form-control');
+  a5.attr('placeholder','Mob');
+
+
+  var a6=$("#id_email");
+  a6.addClass('form-control');
+  a6.attr('placeholder','Email');
+
+
+
+
+
+
+//   var p1=$("#id_password1");
+//   var p2=$("#id_password2");
+
+
+
+// p1.keypress(signch);
+// p2.keypress(signch);
+// var b=$("#signupbtn");
+
+// function signch(){
+
+
+// console.log(p1[0].value,p2[0].value);
+
+// if (p1[0].value != p2[0].value) {
+
+// b[0].title="Password didn't match";
+// b[0].disabled=true;
+
+
+
+// }
+
+// else{
+// b[0].title="";
+// b[0].disabled=false;
+
+
+// }
+
+// }
+
+};
+
+
+</script>
+
+
+
+
+
+  {% endblock %}

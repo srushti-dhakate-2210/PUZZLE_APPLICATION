@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+  {% block mainrep %}
+    
+
+
+ 
+<br>
+
+  <!-- Board -->
+<section id="signup">
+  <div class="container">
+    <h2 class="text-center text-uppercase text-secondary mb-0">board</h2>
+    <hr class="star-dark mb-5">
+    <div class="row">
+      <div class="container">
+
+<table class="table table-hover">
+
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Rankings</th>
+      <th scope="col">Usernames</th>
+    
+    </tr>
+  </thead>
+
+
+  <tbody>
+
+ {% if res %}
+
+    {% for name  in res  %}
+
+  <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{name}}</td>
+  </tr>
+  
+  {% endfor %}
+      
+ {% else %}
+
+ <tr>
+  <th colspan="2">No data yet!!!</th>
+
+ </tr>
+
+
+      
+ {% endif %}
+
+
+
+    
+
+
+    
+  </tbody>
+</table>
+
+
+
+
+      
+    </div>
+    </div>
+  </div>
+</section>
+
+ {% endblock %}

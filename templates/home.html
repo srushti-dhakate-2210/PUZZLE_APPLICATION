@@ -1,0 +1,259 @@
+{% extends "base.html" %}
+
+
+{% block loader %}
+
+ <script src="/assets/home/vendor/jquery/jquery.min.js" ></script>
+<link rel="stylesheet" type="text/css" href="/assets/loader.css">
+
+<script type="text/javascript">
+ 
+
+$(window).on("load",function() {
+
+ 
+    // Animate loader off screen
+  $('#loader').fadeOut("slow",function(){
+    $('#pagetop').fadeIn("medium");
+
+  });
+
+
+
+
+});
+ 
+
+</script>
+
+  <div id="loader">
+
+<section class="wrapper">
+  <div class="spinner">
+    <i></i>
+    <i></i>
+    <i></i>
+    <i></i>
+    <i></i>
+    <i></i>
+    <i></i>
+  </div>
+</section>
+
+</div>
+  
+  <div id="pagetop" style="display:none;">
+
+{% endblock loader %}
+
+
+
+{% block headersel %}
+
+
+
+
+<li class="nav-item mx-0 mx-lg-1" id="play" >
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'game' %}">Play</a>
+          </li>
+
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'board' %}">Board</a>
+          </li>
+
+
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a>
+          </li>
+
+  
+{% endblock headersel %}
+
+
+
+{% block mainrep %}
+<script src="/assets/easytimer.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    var timerInstance = new easytimer.Timer();
+</script>
+
+
+<header class="masthead bg-primary text-white text-center">
+    <div class="container" id="top">
+     <img class="img-fluid mb-5 d-block mx-auto" src="/assets/home/img/profile.png" alt="">
+      <h1 class="text-uppercase mb-0">maze hunter</h1>
+      <hr class="star-light">
+
+<a class="btn btn-secondary btn-lg " href="{% url 'game' %}" role="button" id="playbtn" >Play</a>
+      <div id="countdownExample">
+
+         
+
+
+  <h2 class="font-weight-light mb-0" id="cusval" style="display: inline-flex;" >
+
+
+   
+
+
+    Starts in &nbsp;<div class="values" ></div></h2>
+
+    </div>
+
+    </div>
+  </header>
+
+
+ <!-- About Section -->
+  <section class="portfolio" id="about">
+    <div class="container">
+      <h2 class="text-center text-uppercase text-secondary mb-0">About</h2>
+
+
+      <hr class="star-dark mb-5">
+
+
+<div class="row">
+  <div class="col-lg-4 ml-auto">
+    <p class="lead">
+      Prizes worth 5K.
+      <br>
+      Each correct answer will take you to the next level.
+      <br>
+      There will be a total of six rounds.
+
+     </p>
+  </div>
+  <div class="col-lg-4 mr-auto">
+    <p class="lead"> The first to reach the end will be the one to walk away with the prize.....
+      <br>
+    Let the hunt through the maze of music, movies, art and imagination begin........</p>
+  </div>
+  
+</div>
+    </div>
+  </section>
+
+
+
+
+
+
+<!-- Contact Section -->
+  <section class="bg-primary text-white mb-0" id="contact">
+    <div class="container">
+      <h2 class="text-center text-uppercase text-white">Contact Me</h2>
+      <hr class="star-light mb-5">
+      <div class="row"  >
+
+
+         
+<div class="ml-auto">
+    
+   
+  <li class="list-inline-item">
+    <p class="lead">Srushti</p>
+              <a class="btn btn-outline-light btn-social text-center rounded-circle" href="https://api.WhatsApp.com/send?phone=917448131512">
+                <i class="fab fa-fw fa-whatsapp"></i>
+              </a>
+            </li>
+
+  </div>
+  <hr>
+
+  <div class="mr-auto">
+
+     <li class="list-inline-item">
+      <p class="lead">Srushti's Another number</p>
+              <a class="btn btn-outline-light btn-social text-center rounded-circle" href="https://api.WhatsApp.com/send?phone=919284503670">
+                <i class="fab fa-fw fa-whatsapp"></i>
+              </a>
+            </li>
+
+  </div>
+
+
+
+
+      </div>
+
+   
+    </div>
+  </section>
+
+
+<script type="text/javascript">
+
+var play=$('#play');
+var playbtn=$('#playbtn');
+var count=$('#countdownExample');
+
+{% if prop == "hide" %}
+
+play.hide();
+playbtn.hide();
+
+
+  
+{% else %}
+count.hide();
+play.show('slow');
+playbtn.show('slow');
+
+  
+{% endif %}
+
+
+
+</script>
+
+
+<script type="text/javascript">
+
+  var fut=new Date(2019,2,26,20,30).getTime();
+  var pre=new Date().getTime();
+  var dif=fut-pre;
+
+  var sec = dif / 1000;
+
+
+
+  var d = Math.floor(sec / (3600*24));
+
+
+  var h = Math.floor(sec % (3600*24) / 3600);
+  var m = Math.floor(sec % 3600 / 60);
+  var s = Math.floor(sec % 3600 % 60);
+
+
+  // var sec = Math.abs(sec);
+
+  var timer = new easytimer.Timer();
+
+timer.start({countdown: true, startValues: {hours:h,minutes:m,seconds: s}});
+
+
+
+$('#countdownExample .values').html(d+'d '+timer.getTimeValues().toString());
+timer.addEventListener('secondsUpdated', function (e) {
+    
+    $('#countdownExample .values').html(d+'d '+timer.getTimeValues().toString());
+});
+timer.addEventListener('targetAchieved', function (e) {
+
+count.hide('medium');
+  setTimeout(function(){ window.location.reload(); }, 1000);
+
+
+
+
+    // $('#countdownExample .values').html('KABOOM!!');
+});
+
+</script>
+
+  {% endblock %}
