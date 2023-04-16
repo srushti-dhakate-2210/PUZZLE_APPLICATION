@@ -43,7 +43,7 @@
 
 ##  INSTALL 
 
-*	git clone https://github.com/ask1234560/maze-hunter.git
+*	git clone https://github.com/srushti-dhakate-2210/PUZZLE_APPLICATION.git
 *	cd maze-hunter
 *	python3 must be installed
 *	pip3 install pipenv
