@@ -14,24 +14,32 @@
 
 ### Home page
 
-<img src="screenshots/op2.png" width=1000px>
-
+<img src="screenshots/1.jpg" width=1000px>
+<img src="screenshots/2.jpg" width=1000px>
 
 ### Login
 
-<img src="screenshots/op3.png" width=1000px>
+<img src="screenshots/4.jpg" width=1000px>
 
 ### Signup
 
-<img src="screenshots/op4.png" width=1000px>
+<img src="screenshots/3.jpg" width=1000px>
 
-### Mobile view
+### Game
 
-<img src="screenshots/m1.png" width=1000px>
+<img src="screenshots/5.jpg" width=1000px>
+<img src="screenshots/6.jpg" width=1000px>
 
-<img src="screenshots/m2.png" width=1000px>
+##The soft skills to be assessed by the puzzle
+<ul>
+<li>Soft skills</li>
+<li>Problem solving</li>
+<li>Hard skills</li>
+<li>Communication </li>
+<li>Attitude</li>
+<li>Self-awareness</li>
 
-
+</ul>
 
 ##  INSTALL 
 

@@ -13,9 +13,9 @@ import string
 
 # Create your views here.
 
-keys=['a','b','c','d','e','f']
+keys=['C','B','B','B','C','D']
 
-fut=datetime.datetime(2019,3,26,20,30)
+fut=datetime.datetime(2023,3,26,20,30)
 
 
 def compare(s1, s2):
@@ -133,12 +133,12 @@ def auth(request,no):
 							print("object value added 5")
 					
 
-						elif(not game_obj.q6 and no==6): 
-				
+						elif(not game_obj.q6 and no==6):
+
 							game_obj.q6=True
 							game_obj.q6_ans_on=timezone.now()
 							game_obj.save()
-							print("object value added 6")			
+							print("object value added 6")
 							
 
 
@@ -188,7 +188,7 @@ def game(request):
 			user=CustomUser.objects.get(username=request.user)
 			game_obj=Game.objects.filter(username=user.username)
 
-
+			# return render(request, 'mind.html')
 			if(len(game_obj)!=0): 
 				game_obj=game_obj[0]
 				if(not game_obj.q2 ): 
@@ -197,6 +197,7 @@ def game(request):
 
 				elif(not game_obj.q3): 
 					qstn_no=3
+
 		
 					
 
@@ -208,7 +209,7 @@ def game(request):
 				elif(not game_obj.q5 ): 
 					qstn_no=5
 		
-				elif(not game_obj.q6 ): 
+				elif(not game_obj.q6 ):
 					qstn_no=6
 		
 				
@@ -235,7 +236,9 @@ class Signup(generic.CreateView):
 
 	
 
-
+# def play(request):
+# 	response = requests.get('').json()
+# 	return render(request,'mind.html',{'response':response})
 def home(request):
 	prop="hide"
 	pre=datetime.datetime.now()
@@ -247,38 +250,4 @@ def home(request):
 		prop="show"
 	print(prop)	
 	return render(request,'home.html',{'prop':prop})
-
-# def signup(request):
-# 	if request.method == "POST":
-# 		form=SignupForm(request.POST)
-# 		p1=request.POST["password1"]
-# 		p2=request.POST["password2"]
-# 		print(p1,'|'*5,p2)
-# 		msg="bla"
-
-# 		if p1 != p2:
-# 			msg="Passwords didn't match!!!"
-# 		else : 
-# 			msg="Password conditions not met!!!"
-			
-
-# 		try:
-# 			if(form.is_valid):
-# 			 form.save()
-# 			 username=form.cleaned_data.get("username")
-# 			 raw_pass=form.cleaned_data.get("password1")
-# 			 user=authenticate(username=username,password=raw_pass)
-# 			 login(request,user)
-# 			 return redirect('home')
-			
-# 		except Exception as e:
-# 			return render(request,'signup.html',{"signup":form,'msg':msg})
-			
-# 	else: 
-# 		form=SignupForm()
-# 	return render(request,'signup.html',{"signup":form})
-
-
-
-
 
