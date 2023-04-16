@@ -1,4 +1,4 @@
-# maze-hunter
+# PUZZLE_APPLICATION
 
 * Its a puzzle based online game created using django framework.
 * It can be easily uploaded and hosted to heroku.
