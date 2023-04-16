@@ -55,5 +55,7 @@
 ### view the website
 *	http://localhost:8000/			
 
+### Admin id & Password
 
-
+Username: Admin
+Password: admin
